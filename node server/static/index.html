@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>矿工定位系统</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script src="sockjs-0.3.min.js"></script>
+  <script type="text/javascript" src="openning.js"></script>
+  <script type="text/javascript" src="canvas.js"></script>
+  <link rel="icon" href="icon.png">
+  <link href="font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="normalize.css">
+  <link rel="stylesheet" type="text/css" href="style.css" media="screen and (min-device-width: 800px)">
+  <link rel="stylesheet" type="text/css" href="phone.css" media="screen and (max-device-width: 800px)">
+  <link rel="stylesheet" type="text/css" href="animate.css">
+  </style>
+</head>
+<body><div id="outter-head">矿工定位系统</div>
+<section id="container"><div id="card"><figure class="front"><div id="head">矿工定位系统</div>
+<div id="content" class="wrapper content-front"><div id="left-panel"><div id="com-select"> 串口@ <select id="com-toopen"></select><button id="com-button"></button><div id="terminals"></div></div><div class="wrapper" id="present-content"><div class="inner-title">GPS位置</div><div class="wrapper item" id="item-latitude"><div class="label" id="label-latitude">经度</div><div  class="item-content" id="content-latitude">GPS无信号！</div></div><div class="wrapper item"></div><div class="label">纬度</div><div class="item-content" id="content-longitude">GPS无信号！</div></div><div id="warning-info" class="wrapper"><div class="inner-title">警报信息</div><div class="item wrapper"><div id="label-co" class="longer label">CO气体</div><div id="content-co" class="item-content">未获取！</div></div><div class="item wrapper"><div id="label-ch4" class="longer label">甲烷气体</div><div class="item-content" id="content-ch4">未获取！</div></div></div></div><div id="right-panel"><canvas width="500px" height="500px" id="map-overlay"></canvas><div id="map"></div></div></div></figure>
+<figure class="back"><div id="head" class="back">矿工定位系统</div><div id="content" class="wrapper back"><div id="name">基于无线通信的多功能安全帽</div><div class="wrapper item" id="item-prof"><div class="label" id="label-prof">指导老师</div><div  class="item-content" id="content-prof">李震、邓小玲</div></div><div class="wrapper item" id="item-students"><div class="label" id="label-students">参赛学生</div><div  class="item-content" id="content-students">方武宣、高泽锋、陈杰生</div></div><div class="wrapper item" id="item-students"><div class="label" id="label-students">所属单位</div><div  class="item-content" id="content-students">华南农业大学工程学院</div></div><div id="info">Powered by <a href="http://nodejs.org">node.js</a> and <a href="https://github.com/atom/atom-shell">atom-shell</a>, <br><i class="fa fa-heart"></i> to voodootikigod and his awesome module.</div></div></figure></div>
+</section>
+<div id="about-btn">关于</div>
+</body>
+<script type="text/javascript" src="main.js"></script>
+</html>
