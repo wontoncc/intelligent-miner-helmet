@@ -12,7 +12,7 @@ For more information for the individual part of this repo, please refer to `READ
 
 Overview:
 
-![](https://raw.githubusercontent.com/wontoncc/inteligent-miner-helmet/master/photo/overview.jpg)
+![](https://raw.githubusercontent.com/wontoncc/inteligent-miner-helmet/master/photo/Overview.jpg)
 
 Here is the version 1 of our helmet, whose size of battery case on the back is reduced in the later version by using a smaller size package of Li-on battery.
 
