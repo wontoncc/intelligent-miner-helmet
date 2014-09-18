@@ -1,14 +1,7 @@
 {
-  "name": "inteligent-miner-helmet-system",
-  "author": "Jason Chen",
-  "description": "A server on node.js to gather information from STM32 F0 terminal.",
-  "scripts": {
-    "start": "node server.js"
-  },
-  "main": "shell.js",
-  "dependencies": {
-    "node-static": "^0.7.4",
-    "serialport": "^1.4.6",
-    "sockjs": "^0.3.9"
-  }
+	"scripts" :{
+		"start": "node server.js"
+	},
+	"name": "Inteligent-Miner-Helmet",
+	"main": "shell.js"
 }

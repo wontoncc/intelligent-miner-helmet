@@ -281,8 +281,8 @@ button{
   border-top-right-radius: 18px;
   border-bottom-right-radius: 18px;
   float: left;
-  transition: 2s;
-  -webkit-transition: 2s;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
 
   opacity: 0;
 }
@@ -360,13 +360,23 @@ button{
   width: 90px;
 }
 
-#about-btn{
-  position: absolute;
+#toolbar{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+}
+
+#run-demo.on{
+  background: rgba(0,200,0,0.5) !important;
+}
+
+.toolbar-btn{
+  float: left;
+  width: 52px;
   font-size: 25px;
   padding: 5px;
   margin-right: 5px;
-  top: 0;
-  right: 0;
   background: rgba(0,0,0, 0.5);
   color: white;
   -webkit-border-radius: 0 0 5px 5px;
@@ -375,8 +385,18 @@ button{
   font-family: "黑体",sans-serif;
 }
 
-#about-btn:hover{
+.toolbar-btn:hover{
   background: rgba(0,0,0, 0.7);
   cursor: default;
-;
+}
+
+#tip{
+  opacity: 0.5;
+  background: rgba(0,0,0,1);
+  color: white;
+  position: absolute;
+  width: 200px;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

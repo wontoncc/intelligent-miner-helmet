@@ -9,6 +9,13 @@ hats.get = function getHat(n){
   }
 }
 
+function addPort(port){
+  var comItem = document.createElement('option');
+  comItem.innerHTML = port.comName;
+  comItem.setAttribute('value', port.comName);
+  GUI.comToOpen.appendChild(comItem);
+}
+
 function Hat(n, e, t){
   this.x = 0;
   this.y = 0;
@@ -58,16 +65,17 @@ function GPSDataUpdate (o, n) {
 
 function GasDataUpdate (o, n){
   if(n == numberNow){
-    var randomValue = Math.random() / 10;
-    GUI.contentCO.innerHTML = (randomValue).toFixed(2) + '% 量程';
+    // var randomValue = Math.random() / 10;
+    // GUI.contentCO.innerHTML = (randomValue).toFixed(2) + '% 量程';
 
-    if(o.ch > 0.1 && o.ch4 < 0.5){
+    if(o.ch4 > 0.1 && o.ch4 < 0.5){
       o.ch4 = o.ch4 / Math.abs(5 - o.ch4 * 10);
     }
 
     GUI.contentCH4.innerHTML = (o.ch4 * 100).toFixed(2) + '% 量程';
+    GUI.contentCO.innerHTML = (o.co * 100).toFixed(2) + '% 量程';
     if(o.co > 0.7){
-      // GUI.labelCO.style['background-color'] = 'red';
+      GUI.labelCO.style['background-color'] = 'red';
     } else{
       GUI.labelCO.style['background-color'] = 'black';
     }
@@ -171,7 +179,7 @@ sockjs.send = function (s) {
   sockjs._send(JSON.stringify(s));
 }
 
-sockjs.onmessage = function (e) {
+function messageHandler (e) {
   var obj = JSON.parse(e.data);
   console.log(obj);
 
@@ -183,11 +191,11 @@ sockjs.onmessage = function (e) {
   }
 
   if(obj.port){
-    var comItem = document.createElement('option');
-    comItem.innerHTML = obj.port.comName;
-    comItem.setAttribute('value', obj.port.comName);
-    console.log(GUI);
-    GUI.comToOpen.appendChild(comItem);
+    addPort(obj.port);
+    // var comItem = document.createElement('option');
+    // comItem.innerHTML = obj.port.comName;
+    // comItem.setAttribute('value', obj.port.comName);
+    // GUI.comToOpen.appendChild(comItem);
   }
   if(obj.loc){
     locationInit(obj.loc, obj.number);
@@ -221,6 +229,8 @@ sockjs.onmessage = function (e) {
     }, 2000);
   }
 };
+sockjs.onmessage = messageHandler;
+
 GUI.comButton.onclick = function () {
   console.log(GUI.comButton.innerHTML);
   switch(GUI.comButton.innerHTML){
