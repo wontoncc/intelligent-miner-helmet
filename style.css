@@ -1,0 +1,402 @@
+body{
+  /* background-color: #EEE;*/
+  /*background: 
+  radial-gradient(circle, transparent 20%, slategray 20%, slategray 80%, transparent 80%, transparent),
+  radial-gradient(circle, transparent 20%, slategray 20%, slategray 80%, transparent 80%, transparent) 50px 50px,
+  linear-gradient(#A8B1BB 8px, transparent 8px) 0 -4px,
+  linear-gradient(90deg, #A8B1BB 8px, transparent 8px) -4px 0;
+  background-color: slategray;
+  background-size:100px 100px, 100px 100px, 50px 50px, 50px 50px;*/
+  background-image: url('circuit-pattern.png');
+}
+
+#outter-head{
+  display: none;
+}
+
+#container{
+  position: relative;
+  margin: auto;
+  width: 960px;
+  margin-top: 20px;
+  perspective: 880px;
+  -webkit-perspective: 880px;
+  height: 600px;
+}
+
+#card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: transform 1s;
+}
+
+#head.back{
+  opacity: 1;
+}
+#content.back{
+  height: 500px;
+  background-image: url('back-bg.png')
+}
+
+#card figure{
+  position: absolute;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: block;
+  overflow: hidden;
+  width: 880px;
+  height: 100%;
+}
+
+figure.front{
+  z-index: 1;
+}
+
+figure.back{
+/*  background: blue;*/
+  transform: rotateY( 180deg );
+  -webkit-transform: rotateY( 180deg );
+  z-index: 2;
+}
+
+#card.flipped {
+  transform: rotateY( 180deg );
+  -webkit-transform: rotateY( 180deg );
+}
+
+#head{
+  opacity: 0;
+  width: 400px;
+  margin: auto;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 30px;
+  font-family: "黑体";
+  color: white;
+  background-color: rgba(0,0,0,0.4);
+  -webkit-border-top-left-radius: 15px;
+  -webkit-border-top-right-radius: 15px;
+  -moz-border-radius-topleft: 15px;
+  -moz-border-radius-topright: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.25);
+  /*z-index*/: 1;
+}
+
+#left-panel{
+  float: left;
+  height: 500px;
+  width: 300px;
+  -webkit-border-top-left-radius: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+  -moz-border-radius-topleft: 8px;
+  -moz-border-radius-bottomleft: 8px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+#right-panel{
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  margin-left: 300px;
+}
+
+#content{
+  margin: auto;
+  width: 800px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  background-color: white;
+  transition: 2s;
+  -webkit-transition: 2s;
+  -webkit-box-shadow: 1px 1px 8px 1px rgba(0,0,0,0.3);
+  box-shadow: 1px 1px 8px 1px rgba(0,0,0,0.3);
+}
+.ready{
+  opacity: 0.9;
+}
+
+#present-content{
+  overflow: auto;
+  font-size: 18px;
+  line-height: 25px;
+  margin: 0;
+  border: none;
+  display: block;
+  background: none;
+}
+#warning-info{
+  display: block;
+  overflow: auto;
+}
+
+#map-overlay{
+  /*z-index: 1;*/
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#map{
+  /*z-index*/: 0;
+  float: left;
+  margin: 10px;
+  width: 480px;
+  height: 480px;
+  top: 0;
+  right: 0;
+  background-image: url('map-bg.png');
+/*  background: url('map-left-bg.png'), rgba(175,250,82,1);
+  background-repeat: no-repeat, no-repeat;
+  background-position: 0px 0px, right;*/
+/*  background-color: #AFFA52;*/
+/*  background: rgb(255,255,255);
+  background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(175,250,82,1) 10%, rgba(175,250,82,1) 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,1)), color-stop(10%,rgba(175,250,82,1)), color-stop(100%,rgba(175,250,82,1)));
+  background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%,rgba(175,250,82,1) 10%,rgba(175,250,82,1) 100%);
+  background: -o-linear-gradient(left, rgba(255,255,255,1) 0%,rgba(175,250,82,1) 10%,rgba(175,250,82,1) 100%);
+  background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%,rgba(175,250,82,1) 10%,rgba(175,250,82,1) 100%);
+  background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(175,250,82,1) 10%,rgba(175,250,82,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#affa52',GradientType=1 );*/
+  -webkit-border-top-right-radius: 8px;
+  -webkit-border-bottom-right-radius: 8px;
+  -moz-border-radius-topright: 8px;
+  -moz-border-radius-bottomright: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+/*  -webkit-box-shadow: 2px 0 5px 0 rgba(0,0,0,0.2);
+  box-shadow: 2px 0 5px 0 rgba(0,0,0,0.2);*/
+}
+
+.wrapper:after {
+    content:'';
+    display:block;
+    clear: both;
+}
+.point{
+  width: 64px;
+  height: 64px;
+  display: block;
+  position: absolute;
+  -webkit-border-radius: 2.5px;
+  -moz-border-radius: 2.5px;
+  border-radius: 2.5px;
+  background-image: url('hat.png');
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+.number{
+  display: block;
+  width: 20px;
+  height: 20px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  background-color: black;
+  opacity: 0.7;
+  text-align: center;
+  color: white;
+}
+
+input{
+  border: none;
+}
+
+button{
+  border: none;
+}
+
+#com-select{
+  font-family: "黑体", sans-serif;
+  padding-left: 10px;
+  height: 40px;
+  font-size: 20px;
+  line-height: 40px;
+  -webkit-border-top-left-radius: 8px;
+  -moz-border-radius-topleft: 8px;
+  border-top-left-radius: 8px;
+}
+#com-button{
+  background: none;
+}
+#com-toopen{
+  border: none;
+  border-bottom: 1px dotted gray;
+  width: 90px;
+  font-size: 20px;
+}
+
+#terminals{
+  margin-top: 10px;
+  width: 55px;
+  float:right;
+}
+.terminal{
+  line-height: 20px;
+  font-size: 12px;
+  width: 20px;
+  display: block;
+  float: left;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  height: 20px;
+  margin-right: 5px;
+  background: rgba(200,200,200,0.35);
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  cursor: pointer;
+}
+.in-danger{
+  background: rgba(255,0,0,0.35) !important;
+}
+.selected{
+  background: rgba(0,0,0, 1);
+}
+.terminal:hover{
+  transform: scale(1.25) !important;
+}
+
+.label{
+  font-family: "黑体";
+  background-color: black;
+  height: 36px;
+  line-height: 36px;
+  width: 60px;
+  color: white;
+  padding-left: 20px;
+  -webkit-border-top-right-radius: 18px;
+  -webkit-border-bottom-right-radius: 18px;
+  -moz-border-radius-topright: 18px;
+  -moz-border-radius-bottomright: 18px;
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+  float: left;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+
+  opacity: 0;
+}
+
+#name{
+  width: 100%;
+  text-align: center;
+  font-size: 50px;
+  padding-top: 30px;
+  margin-bottom: 60px;
+  font-weight: bold;
+}
+
+#info{
+  color: gray;
+  position: absolute;
+  bottom: 30px;
+  left: 60px;
+  font-style: italic;
+  font-family: serif;
+  line-height: 25px;
+  font-size: 16px;
+}
+#info a{
+  text-decoration: none;
+  border-bottom: 1px dotted gray;
+  color: gray;
+}
+
+#logo{
+  background-image: url('logo-of-univ.png');
+  background-repeat: no-repeat;
+  opacity: 0.3;
+  width: 330px;
+  height: 330px;
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  padding: 20px;
+  transform: rotate(-15deg);
+}
+
+#label-prof,#label-students{
+  width: 80px;
+}
+#content-prof,#content-students{
+
+}
+
+.item-content{
+  float: left;
+  height: 36px;
+  line-height: 36px;
+  padding-left: 20px;
+  opacity: 0;
+}
+
+.item{
+  margin-top: 10px;
+}
+
+.inner-title{
+  font-size: 25px;
+  text-align: center;
+  border-bottom: 1px dotted gray;
+  width: 300px;
+  margin-top: 25px;
+  padding-bottom: 5px;
+  font-family: "黑体";
+  opacity: 0;
+  color: #A1D600;
+}
+
+.longer{
+  width: 90px;
+}
+
+#toolbar{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+}
+
+#run-demo.on{
+  background: rgba(0,200,0,0.5) !important;
+}
+
+.toolbar-btn{
+  float: left;
+  width: 52px;
+  font-size: 25px;
+  padding: 5px;
+  margin-right: 5px;
+  background: rgba(0,0,0, 0.5);
+  color: white;
+  -webkit-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+  transition: 0.7s;
+  font-family: "黑体",sans-serif;
+}
+
+.toolbar-btn:hover{
+  background: rgba(0,0,0, 0.7);
+  cursor: default;
+}
+
+#tip{
+  opacity: 0.5;
+  background: rgba(0,0,0,1);
+  color: white;
+  position: absolute;
+  width: 200px;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
