@@ -16,10 +16,10 @@ Overview:
 
 Here is the version 1 of our helmet, whose size of battery case on the back is reduced in the later version by using a smaller size package of Li-on battery.
 
-![](https://raw.githubusercontent.com/wontoncc/inteligent-miner-helmet/master/photo/side.png)
+![](https://raw.githubusercontent.com/wontoncc/inteligent-miner-helmet/master/photo/side.jpg)
 
-![](https://raw.githubusercontent.com/wontoncc/inteligent-miner-helmet/master/photo/front.png)
+![](https://raw.githubusercontent.com/wontoncc/inteligent-miner-helmet/master/photo/front.jpg)
 
-![](https://raw.githubusercontent.com/wontoncc/inteligent-miner-helmet/master/photo/top.png)
+![](https://raw.githubusercontent.com/wontoncc/inteligent-miner-helmet/master/photo/top.jpg)
 
 (The text in tags is Chinese, may be translated to English later)
